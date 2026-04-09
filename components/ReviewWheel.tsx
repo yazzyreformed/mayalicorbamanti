@@ -95,14 +95,14 @@ export default function ReviewWheel() {
           {[...storyReviews, ...storyReviews].map((story, index) => (
             <SwiperSlide 
               key={index} 
-              className="!w-[240px] md:!w-[340px] !h-[420px] md:!h-[600px]"
+              className="!w-[280px] md:!w-[360px] !h-[350px] md:!h-[450px]"
             >
-              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl bg-stone-900 group">
-                {/* Photo */}
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl bg-stone-100 border border-stone-200 flex items-center justify-center group pointer-events-none">
+                {/* Photo anchored to the right side instead of panning */}
                 <img 
                   src={story.storyImage} 
                   alt="Review" 
-                  className="w-full h-full object-cover transition-transform duration-[10s] ease-linear group-hover:scale-110" 
+                  className="w-full h-full object-cover object-right transition-transform duration-[10s] ease-linear group-hover:scale-[1.05]" 
                 />
               </div>
             </SwiperSlide>

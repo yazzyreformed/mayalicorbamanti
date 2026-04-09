@@ -29,9 +29,11 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled 
-          ? "bg-white/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.05)] border-b border-gray-100 py-3" 
-          : "bg-gradient-to-b from-black/60 via-black/20 to-transparent pt-6 pb-2"
+        mobileMenuOpen
+          ? "bg-transparent py-4 border-b-transparent"
+          : scrolled 
+            ? "bg-white/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.05)] border-b border-gray-100 py-3" 
+            : "bg-gradient-to-b from-black/60 via-black/20 to-transparent pt-6 pb-2 border-b-transparent"
       }`}
     >
       <div className="container mx-auto px-6 grid grid-cols-3 items-center">
@@ -53,11 +55,11 @@ export default function Navbar() {
         </nav>
 
         {/* LOGO (Center) - Slightly Adjusted */}
-        <div className="flex justify-start md:justify-center col-span-2 md:col-span-1 relative">
-          <Link href="/" className="flex flex-col items-center justify-center transform -translate-y-1 md:-translate-y-2 cursor-pointer">
+        <div className="flex justify-start md:justify-center col-span-2 md:col-span-1 relative z-50">
+          <Link href="/" className="flex flex-col items-center justify-center transform -translate-y-1 md:-translate-y-2 cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
             <div className="relative group">
               {/* Optional Subtle Glow behind logo when scrolled */}
-              <div className={`absolute inset-0 rounded-full blur-2xl transition-opacity duration-700 ${scrolled ? 'bg-white/50 opacity-100' : 'opacity-0'}`}></div>
+              <div className={`absolute inset-0 rounded-full blur-2xl transition-opacity duration-700 ${scrolled && !mobileMenuOpen ? 'bg-white/50 opacity-100' : 'opacity-0'}`}></div>
               <img 
                 src="/logo.png?v=1" 
                 alt="Neva Çorba & Mantı" 
@@ -101,40 +103,64 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Nav Toggle */}
-        <div className="flex justify-end md:hidden col-span-1">
+        <div className="flex justify-end md:hidden col-span-1 relative z-50">
           <button
-            className={`transition-colors duration-300 ${scrolled ? "text-[#2A3B2C]" : "text-white"}`}
+            className={`transform transition-all duration-500 outline-none ${
+              mobileMenuOpen 
+                ? "text-[#E8D1B5] rotate-90 scale-110" 
+                : scrolled ? "text-[#2A3B2C] rotate-0 scale-100" : "text-white rotate-0 scale-100"
+            }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+            {mobileMenuOpen ? <X size={36} strokeWidth={1.5} /> : <Menu size={32} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl shadow-2xl border-t border-gray-100 flex flex-col items-center py-10 space-y-8 animate-in slide-in-from-top-2 duration-300">
-          {[...leftNavLinks, ...rightNavLinks].map((link) => (
+      {/* Premium Fullscreen Mobile Menu Overlay */}
+      <div 
+        className={`md:hidden fixed inset-0 bg-[#1A251C]/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.87,0,0.13,1)] ${
+          mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col items-center space-y-10 w-full px-6 relative z-10">
+          {[...leftNavLinks, ...rightNavLinks].map((link, i) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-xl font-serif text-stone-800 hover:text-[#2A3B2C] tracking-wide transition-colors"
+              className={`text-4xl sm:text-5xl font-serif text-[#F9F9F6] tracking-widest uppercase transition-all duration-700 ease-out transform hover:text-[#E8D1B5] hover:scale-105 ${
+                mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+              }`}
+              style={{ transitionDelay: `${mobileMenuOpen ? i * 100 + 150 : 0}ms` }}
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
             </Link>
           ))}
-          <a
-             href="https://www.yemeksepeti.com/restaurant/n20f/neva-corba-and-manti?srsltid=AfmBOor6dKA0qsscwqTPz9jnwoau1xYqJdSvVkzNobE4g94X9iKqLmt7"
-             target="_blank"
-             rel="noopener noreferrer"
-             className="text-lg font-bold tracking-widest uppercase text-white bg-[#2A3B2C] px-8 py-3 rounded-full shadow-lg"
-             onClick={() => setMobileMenuOpen(false)}
+          
+          <div 
+              className={`pt-12 w-full flex justify-center transition-all duration-700 ease-out ${
+                  mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+              }`}
+              style={{ transitionDelay: `${mobileMenuOpen ? 500 : 0}ms` }}
           >
-             Sipariş Ver
-          </a>
+              <a
+                 href="https://www.yemeksepeti.com/restaurant/n20f/neva-corba-and-manti?srsltid=AfmBOor6dKA0qsscwqTPz9jnwoau1xYqJdSvVkzNobE4g94X9iKqLmt7"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="text-sm font-bold tracking-[0.2em] uppercase text-[#1A251C] bg-[#E8D1B5] px-10 py-4 rounded-full shadow-[0_0_50px_rgba(232,209,181,0.25)] border border-[#E8D1B5] active:scale-95 transition-transform"
+                 onClick={() => setMobileMenuOpen(false)}
+              >
+                 Sipariş Ver
+              </a>
+          </div>
         </div>
-      )}
+
+        {/* Decorative background watermark */}
+        <div className={`absolute bottom-[-5%] left-1/2 -translate-x-1/2 opacity-5 pointer-events-none transition-all duration-1000 ${mobileMenuOpen ? "scale-100" : "scale-50"}`}>
+           <h1 className="text-[12rem] font-serif italic text-white whitespace-nowrap">NEVA</h1>
+        </div>
+      </div>
     </header>
   );
 }
