@@ -37,7 +37,7 @@ export default function Hero() {
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 mt-16">
         <h1 
           ref={textRef}
-          className="text-[#F9F9F6] text-6xl md:text-8xl lg:text-9xl font-serif max-w-5xl leading-[1.1] tracking-tight"
+          className="text-[#F9F9F6] text-5xl md:text-8xl lg:text-9xl font-serif max-w-5xl leading-[1.1] tracking-tight"
         >
           Gelenek <br /> <span className="italic">yeniden yorumlandı.</span>
         </h1>

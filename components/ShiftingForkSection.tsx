@@ -91,11 +91,11 @@ export default function SoupPourSection() {
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full flex flex-col items-center pointer-events-none z-10">
         
         {/* Minimalist Abstract Wooden / Golden Ladle */}
-        <div className="relative -mt-10 sm:-mt-5 flex flex-col items-center z-20">
+        <div className="relative -mt-12 sm:-mt-5 flex flex-col items-center z-20">
            {/* Wooden Handle */}
-           <div className="w-5 h-40 sm:h-56 bg-gradient-to-t from-[#4a2e15] to-[#2e1c0d] rounded-t-full shadow-2xl -rotate-[15deg] translate-x-8 translate-y-6"></div>
+           <div className="w-4 h-28 sm:w-5 sm:h-56 bg-gradient-to-t from-[#4a2e15] to-[#2e1c0d] rounded-t-full shadow-2xl -rotate-[15deg] translate-x-6 sm:translate-x-8 translate-y-6"></div>
            {/* Ladle Head/Bowl */}
-           <div className="w-32 h-20 sm:w-40 sm:h-24 bg-gradient-to-b from-[#5c3a21] to-[#2e1c0d] rounded-b-[100px] shadow-[0_20px_40px_rgba(0,0,0,0.6)] relative flex items-start justify-center overflow-visible border-t-8 border-[#2e1c0d]">
+           <div className="w-28 h-16 sm:w-40 sm:h-24 bg-gradient-to-b from-[#5c3a21] to-[#2e1c0d] rounded-b-[100px] shadow-[0_20px_40px_rgba(0,0,0,0.6)] relative flex items-start justify-center overflow-visible border-t-8 border-[#2e1c0d]">
              {/* Liquid Top Surface inside the ladle */}
              <div 
                ref={ladleSoupRef}
@@ -116,7 +116,7 @@ export default function SoupPourSection() {
         {/* The Ceramic Bowl at the bottom */}
         <div 
           ref={bowlRef} 
-          className="absolute bottom-16 sm:bottom-24 left-1/2 transform -translate-x-1/2 w-56 sm:w-72 h-20 sm:h-28 bg-[#d6d6d3] rounded-b-[150px] shadow-[0_30px_50px_rgba(0,0,0,0.15)] opacity-0 translate-y-20 flex justify-center items-start overflow-hidden border-t-[12px] border-[#c0c0bc] z-0"
+          className="absolute bottom-20 sm:bottom-24 left-1/2 transform -translate-x-1/2 w-48 h-16 sm:w-72 sm:h-28 bg-[#d6d6d3] rounded-b-[150px] shadow-[0_30px_50px_rgba(0,0,0,0.15)] opacity-0 translate-y-20 flex justify-center items-start overflow-hidden border-t-8 sm:border-t-[12px] border-[#c0c0bc] z-0"
         >
            {/* Soup rising inside the bowl */}
            <div 
@@ -129,7 +129,7 @@ export default function SoupPourSection() {
       <div className="relative z-30 container mx-auto px-6 h-full flex flex-col justify-center items-center pointer-events-none">
         <h2 
           ref={textRef} 
-          className="text-4xl md:text-6xl lg:text-8xl font-serif text-[#2A3B2C] text-center max-w-5xl drop-shadow-sm leading-[1.2]"
+          className="text-3xl md:text-6xl lg:text-8xl font-serif text-[#2A3B2C] text-center max-w-5xl drop-shadow-sm leading-[1.2] px-4"
         >
           Tariflerimizde sadece <br className="hidden md:block"/>
           <span className="text-[#d6720d] italic tracking-wide">doğanın sunduğunu</span> kullanırız.

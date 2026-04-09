@@ -75,11 +75,11 @@ export default function InteractiveSection() {
   };
 
   return (
-    <section ref={containerRef} className="py-40 md:py-64 bg-[#F9F9F6] relative overflow-hidden texture-bg cursor-default perspective-1000">
+    <section ref={containerRef} className="py-24 md:py-64 bg-[#F9F9F6] relative overflow-hidden texture-bg md:cursor-default perspective-1000">
       {/* Custom Floating Cursor / Mask Window */}
       <div 
         ref={cursorRef} 
-        className="fixed top-0 left-0 w-[380px] h-[380px] rounded-full overflow-hidden pointer-events-none z-50 opacity-0 scale-0 transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_50px_rgba(42,59,44,0.15)] bg-[#2A3B2C]/5 backdrop-blur-sm border border-white/20"
+        className="hidden md:block fixed top-0 left-0 w-[380px] h-[380px] rounded-full overflow-hidden pointer-events-none z-50 opacity-0 scale-0 transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_50px_rgba(42,59,44,0.15)] bg-[#2A3B2C]/5 backdrop-blur-sm border border-white/20"
       >
         {hoveredVideo === "corba" && (
           <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=800&auto=format&fit=crop" className="w-full h-full object-cover transform scale-125 origin-center" alt="Çorba" />
@@ -89,20 +89,20 @@ export default function InteractiveSection() {
         )}
       </div>
 
-      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-center items-center gap-12 md:gap-32">
-        <Link href="/menu#corbalar" passHref className="cursor-none">
+      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-32">
+        <Link href="/menu#corbalar" passHref className="md:cursor-none">
           <h2 
-            className="text-7xl md:text-9xl lg:text-[12rem] font-serif text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors duration-500 cursor-none"
+            className="text-6xl md:text-9xl lg:text-[12rem] font-serif text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors duration-500 md:cursor-none"
             onMouseEnter={() => handleMouseEnter("corba")}
             onMouseLeave={handleMouseLeave}
           >
             ÇORBA
           </h2>
         </Link>
-        <span className="text-4xl md:text-6xl font-serif italic text-stone-300 pointer-events-none">&amp;</span>
-        <Link href="/menu#mantilar" passHref className="cursor-none">
+        <span className="text-3xl md:text-6xl font-serif italic text-stone-300 pointer-events-none">&amp;</span>
+        <Link href="/menu#mantilar" passHref className="md:cursor-none">
           <h2 
-            className="text-7xl md:text-9xl lg:text-[12rem] font-serif text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors duration-500 cursor-none"
+            className="text-6xl md:text-9xl lg:text-[12rem] font-serif text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors duration-500 md:cursor-none"
             onMouseEnter={() => handleMouseEnter("manti")}
             onMouseLeave={handleMouseLeave}
           >

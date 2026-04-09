@@ -64,7 +64,7 @@ export default function DishCarousel() {
               {({ isActive }) => (
                 <div className="w-full h-full flex flex-col items-center justify-center relative">
                   <div 
-                    className={`w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden mb-10 shadow-2xl relative transition-opacity duration-1000 ${isActive ? 'opacity-100' : 'opacity-20'}`}
+                    className={`w-[260px] h-[260px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden mb-8 md:mb-10 shadow-2xl relative transition-opacity duration-1000 ${isActive ? 'opacity-100' : 'opacity-20'}`}
                   >
                     <img 
                       src={dish.img} 

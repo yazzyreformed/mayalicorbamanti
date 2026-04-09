@@ -95,7 +95,7 @@ export default function ReviewWheel() {
           {[...storyReviews, ...storyReviews].map((story, index) => (
             <SwiperSlide 
               key={index} 
-              className="!w-[280px] md:!w-[340px] !h-[500px] md:!h-[600px]"
+              className="!w-[240px] md:!w-[340px] !h-[420px] md:!h-[600px]"
             >
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl bg-stone-900 group">
                 {/* Photo */}
