@@ -170,15 +170,15 @@ export default function MenuPage() {
                      />
                   </div>
 
-                  <div className="flex items-baseline justify-between mb-3 w-full">
-                    <h3 className="text-2xl font-serif text-[#2A3B2C] group-hover:text-[#8B5A2B] transition-colors whitespace-nowrap">
+                  <div className="flex items-start sm:items-baseline justify-between mb-3 w-full gap-3 sm:gap-0">
+                    <h3 className="text-xl md:text-2xl font-serif text-[#2A3B2C] group-hover:text-[#8B5A2B] transition-colors leading-tight">
                       {item.name}
                     </h3>
                     
                     {/* Dots Separator */}
-                    <div className="flex-grow mx-4 border-b-[2px] border-dotted border-[#2A3B2C]/30 relative top-[-6px] min-w-[20px]"></div>
+                    <div className="hidden sm:block flex-grow mx-4 border-b-[2px] border-dotted border-[#2A3B2C]/30 relative top-[-6px] min-w-[20px]"></div>
                     
-                    <span className="text-2xl font-serif text-[#2A3B2C] group-hover:text-[#8B5A2B] transition-colors whitespace-nowrap">
+                    <span className="text-xl md:text-2xl font-serif text-[#2A3B2C] group-hover:text-[#8B5A2B] transition-colors whitespace-nowrap">
                       {item.price}
                     </span>
                   </div>
