@@ -11,21 +11,40 @@ export default function ParallaxSection() {
     gsap.registerPlugin(ScrollTrigger);
     
     const ctx = gsap.context(() => {
-      const images = gsap.utils.toArray<HTMLElement>(".parallax-img");
-      
-      images.forEach((img) => {
-        const speed = parseFloat(img.getAttribute("data-speed") || "1");
-        
-        gsap.to(img, {
-          y: () => -200 * speed,
-          ease: "none",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-          }
+      let mm = gsap.matchMedia();
+
+      mm.add("(min-width: 768px)", () => {
+        const images = gsap.utils.toArray<HTMLElement>(".parallax-img");
+        images.forEach((img) => {
+          const speed = parseFloat(img.getAttribute("data-speed") || "1");
+          gsap.to(img, {
+            y: () => -200 * speed,
+            ease: "none",
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            }
+          });
         });
+      });
+      
+      mm.add("(max-width: 767px)", () => {
+         const images = gsap.utils.toArray<HTMLElement>(".parallax-img");
+         images.forEach((img) => {
+             const speed = parseFloat(img.getAttribute("data-speed") || "1");
+             gsap.to(img, {
+                y: () => -70 * speed, // Telefonda görsellerin ekrandan aşırı hızlı fırlayıp kaybolmaması için azaltılmış yol mesafesi
+                ease: "none",
+                scrollTrigger: { 
+                    trigger: containerRef.current, 
+                    start: "top bottom", 
+                    end: "bottom top", 
+                    scrub: true 
+                }
+             });
+         });
       });
     }, containerRef);
 
@@ -33,8 +52,9 @@ export default function ParallaxSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 bg-[#2A3B2C] relative overflow-hidden h-[120vh]">
-      <div className="absolute top-[20%] left-[10%] w-[45vw] md:w-[32vw] h-[48vh] parallax-img" data-speed="2">
+    <section ref={containerRef} className="py-20 md:py-32 bg-[#2A3B2C] relative overflow-hidden h-[85vh] md:h-[120vh]">
+
+      <div className="absolute top-[12%] left-[2%] w-[45vw] md:w-[32vw] h-[25vh] md:h-[48vh] parallax-img" data-speed="2">
         <img 
           src="/kayseri_mantisi.png" 
           alt="Kayseri Mantısı" 
@@ -42,7 +62,7 @@ export default function ParallaxSection() {
         />
       </div>
       
-      <div className="absolute top-[50%] right-[10%] w-[40vw] md:w-[30vw] h-[50vh] parallax-img" data-speed="3.5">
+      <div className="absolute top-[40%] right-[2%] w-[50vw] md:w-[30vw] h-[30vh] md:h-[50vh] parallax-img" data-speed="3.5">
         <img 
           src="/beyran.png" 
           alt="Beyran" 
@@ -50,16 +70,17 @@ export default function ParallaxSection() {
         />
       </div>
 
-      <div className="absolute top-[70%] left-[30%] w-[30vw] md:w-[25vw] h-[38vh] parallax-img" data-speed="1.2">
+      <div className="absolute top-[65%] left-[10%] w-[45vw] md:w-[25vw] h-[22vh] md:h-[38vh] parallax-img" data-speed="1.2">
         <img 
           src="/kayseri_yaglamasi.png" 
           alt="Kayseri Yağlaması" 
-          className="w-full h-full object-cover rounded-[5rem] opacity-90"
+          className="w-full h-full object-cover rounded-[3rem] opacity-90"
         />
       </div>
 
-      <div className="container mx-auto px-6 h-full flex flex-col justify-center items-center relative z-10 pointer-events-none">
-        <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif text-[#F9F9F6] text-center leading-tight drop-shadow-2xl">
+      {/* Merkez Metin */}
+      <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-10 pointer-events-none mt-[8vh] md:mt-0">
+        <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-[#F9F9F6] text-center leading-[1.1] drop-shadow-2xl">
           doğal. <br /> katkısız. <br /> <span className="italic text-[#E8D1B5]">lezzetli.</span>
         </h2>
       </div>

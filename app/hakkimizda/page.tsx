@@ -84,7 +84,7 @@ export default function AboutPage() {
         {/* Centered Hero Text */}
         <h1 
           ref={heroTextRef}
-          className="relative z-10 text-5xl md:text-7xl lg:text-9xl text-[#F9F9F6] font-serif text-center px-4 max-w-6xl leading-[1.1] opacity-0"
+          className="relative z-10 text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-[#F9F9F6] font-serif text-center px-4 max-w-6xl leading-[1.1] opacity-0"
         >
           tamamen doğal, <br/>
           <span className="italic text-[#E8D1B5]">gerçek lezzet</span>
@@ -92,11 +92,11 @@ export default function AboutPage() {
       </section>
 
       {/* 2. Brand Story / Founder Section */}
-      <section className="py-32 md:py-48 container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-16 md:gap-24">
+      <section className="py-20 md:py-48 container mx-auto px-4 md:px-6 relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
           
           <div className="w-full md:w-1/2 order-2 md:order-1 reveal-text">
-            <h2 className="text-6xl md:text-8xl font-serif tracking-tighter mb-8 text-[#2A3B2C]">
+            <h2 className="text-5xl sm:text-6xl md:text-8xl font-serif tracking-tighter mb-6 md:mb-8 text-[#2A3B2C]">
               neva'nın hikayesi
             </h2>
             <p className="text-lg md:text-xl text-stone-700 leading-relaxed font-sans mb-8">
@@ -107,9 +107,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="w-full md:w-1/2 px-4 md:px-8 order-1 md:order-2 flex justify-center">
+          <div className="w-full md:w-1/2 px-0 md:px-8 order-1 md:order-2 flex justify-center">
             {/* Custom Mask Image */}
-            <div className="w-[300px] h-[400px] md:w-[450px] md:h-[600px] overflow-hidden rounded-[8rem] md:rounded-[12rem] opacity-0 reveal-text relative shadow-2xl">
+            <div className="w-[85vw] h-[55vh] md:w-[450px] md:h-[600px] overflow-hidden rounded-[4rem] md:rounded-[12rem] opacity-0 reveal-text relative shadow-2xl">
               <img 
                 src="/hikayemiz.jpg" 
                 alt="Restaurant Exterior" 
@@ -121,8 +121,8 @@ export default function AboutPage() {
       </section>
 
       {/* 3. Alternating Large Quote Section */}
-      <section className="py-24 bg-[#2A3B2C] text-[#F9F9F6]">
-        <div className="container mx-auto px-6 text-center max-w-5xl reveal-text">
+      <section className="py-16 md:py-24 bg-[#2A3B2C] text-[#F9F9F6]">
+        <div className="container mx-auto px-4 md:px-6 text-center max-w-5xl reveal-text">
           <h3 className="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.3] italic text-[#E8D1B5]">
             "Endüstriyel mutfakların gürültüsünden uzakta, tencerenin yavaş yavaş tıngırdadığı gerçek ustalık vizyonu."
           </h3>
@@ -133,12 +133,12 @@ export default function AboutPage() {
       <IngredientMouseTrack />
 
       {/* 5. Second Content Block */}
-      <section className="py-32 md:py-48 container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-16 md:gap-24">
+      <section className="py-20 md:py-48 container mx-auto px-4 md:px-6 relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
           
           <div className="w-full md:w-1/2 flex justify-center">
             {/* Custom Mask Image - Circle */}
-            <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] overflow-hidden rounded-full opacity-0 reveal-text relative shadow-2xl">
+            <div className="w-[85vw] h-[85vw] max-w-[400px] max-h-[400px] md:w-[500px] md:h-[500px] overflow-hidden rounded-full opacity-0 reveal-text relative shadow-2xl">
               <img 
                 src="/kaynagindan_sofraya.jpg" 
                 alt="Chef preparing food" 
@@ -148,8 +148,8 @@ export default function AboutPage() {
           </div>
 
           <div className="w-full md:w-1/2 reveal-text">
-            <h2 className="text-6xl md:text-8xl font-serif tracking-tighter mb-8 text-[#2A3B2C]">
-              kaynağından <br/> sofraya
+            <h2 className="text-5xl sm:text-6xl md:text-8xl font-serif tracking-tighter mb-6 md:mb-8 text-[#2A3B2C] leading-none">
+              kaynağından <br className="hidden sm:block" /> sofraya
             </h2>
             <p className="text-lg md:text-xl text-stone-700 leading-relaxed font-sans mb-8">
               En iyi yemeğin en iyi malzemeyle başladığına inanıyoruz. Bu yüzden unumuzu değirmenden, etimizi yöresel kasabımızdan, baharatlarımızı ise hasat edildiği bölgelerden doğrudan temin ediyoruz.

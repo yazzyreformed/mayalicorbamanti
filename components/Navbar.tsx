@@ -16,6 +16,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   const leftNavLinks = [
     { name: "Anasayfa", href: "/" },
     { name: "Menü", href: "/menu" },
@@ -28,7 +39,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-500 ${
         mobileMenuOpen
           ? "bg-transparent py-4 border-b-transparent"
           : scrolled 
@@ -119,8 +130,8 @@ export default function Navbar() {
 
       {/* Premium Fullscreen Mobile Menu Overlay */}
       <div 
-        className={`md:hidden fixed inset-0 bg-[#1A251C]/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.87,0,0.13,1)] ${
-          mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+        className={`md:hidden fixed inset-0 bg-[#1A251C] z-40 flex flex-col items-center justify-center transition-opacity duration-300 ease-out ${
+          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
         <div className="flex flex-col items-center space-y-10 w-full px-6 relative z-10">
@@ -128,10 +139,10 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-4xl sm:text-5xl font-serif text-[#F9F9F6] tracking-widest uppercase transition-all duration-700 ease-out transform hover:text-[#E8D1B5] hover:scale-105 ${
-                mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+              className={`text-4xl sm:text-5xl font-serif text-[#F9F9F6] tracking-widest uppercase transition-all duration-500 ease-out transform hover:text-[#E8D1B5] hover:scale-105 ${
+                mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
               }`}
-              style={{ transitionDelay: `${mobileMenuOpen ? i * 100 + 150 : 0}ms` }}
+              style={{ transitionDelay: `${mobileMenuOpen ? i * 75 + 100 : 0}ms` }}
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
@@ -139,10 +150,10 @@ export default function Navbar() {
           ))}
           
           <div 
-              className={`pt-12 w-full flex justify-center transition-all duration-700 ease-out ${
-                  mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+              className={`pt-12 w-full flex justify-center transition-all duration-500 ease-out ${
+                  mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
               }`}
-              style={{ transitionDelay: `${mobileMenuOpen ? 500 : 0}ms` }}
+              style={{ transitionDelay: `${mobileMenuOpen ? 400 : 0}ms` }}
           >
               <a
                  href="https://www.yemeksepeti.com/restaurant/n20f/neva-corba-and-manti?srsltid=AfmBOor6dKA0qsscwqTPz9jnwoau1xYqJdSvVkzNobE4g94X9iKqLmt7"
@@ -156,10 +167,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Decorative background watermark */}
-        <div className={`absolute bottom-[-5%] left-1/2 -translate-x-1/2 opacity-5 pointer-events-none transition-all duration-1000 ${mobileMenuOpen ? "scale-100" : "scale-50"}`}>
-           <h1 className="text-[12rem] font-serif italic text-white whitespace-nowrap">NEVA</h1>
-        </div>
       </div>
     </header>
   );

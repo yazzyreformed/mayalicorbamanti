@@ -90,20 +90,22 @@ export default function InteractiveSection() {
         )}
       </div>
 
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 lg:gap-16">
-        <Link href="/menu#mantilar" passHref className="md:cursor-none">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-12 md:gap-12 lg:gap-16 relative z-10">
+        <Link href="/menu#mantilar" passHref className="md:cursor-none flex flex-col items-center group">
           <h2 
-            className="text-5xl md:text-8xl lg:text-[7.5rem] xl:text-[9.5rem] font-serif text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors duration-500 md:cursor-none"
+            className="text-[5.5rem] leading-none md:text-8xl lg:text-[7.5rem] xl:text-[9.5rem] font-serif text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors duration-500 md:cursor-none"
             onMouseEnter={() => handleMouseEnter("manti")}
             onMouseLeave={handleMouseLeave}
           >
             MANTI
           </h2>
         </Link>
-        <span className="text-3xl md:text-6xl font-serif italic text-stone-300 pointer-events-none">&amp;</span>
-        <Link href="/menu#yaglamalar" passHref className="md:cursor-none">
+        
+        <span className="text-4xl md:text-6xl font-serif italic text-stone-300 pointer-events-none my-4 md:my-0">&amp;</span>
+        
+        <Link href="/menu#yaglamalar" passHref className="md:cursor-none flex flex-col items-center group">
           <h2 
-            className="text-5xl md:text-8xl lg:text-[7.5rem] xl:text-[9.5rem] font-serif text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors duration-500 md:cursor-none"
+            className="text-[5.5rem] leading-none md:text-8xl lg:text-[7.5rem] xl:text-[9.5rem] font-serif text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors duration-500 md:cursor-none"
             onMouseEnter={() => handleMouseEnter("yaglama")}
             onMouseLeave={handleMouseLeave}
           >

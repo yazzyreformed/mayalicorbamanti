@@ -30,9 +30,12 @@ export default function SoupPourSection() {
           }
         });
 
+        const isMobile = window.innerWidth < 768;
+        const streamHeight = isMobile ? "48vh" : "65vh";
+
         // 1. Soup liquid stretches down from the ladle lip
         tl.to(liquidStreamRef.current, {
-          height: "65vh",
+          height: streamHeight,
           ease: "none",
           duration: 2
         }, 0);
@@ -91,7 +94,7 @@ export default function SoupPourSection() {
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full flex flex-col items-center pointer-events-none z-10">
         
         {/* Minimalist Abstract Wooden / Golden Ladle */}
-        <div className="relative -mt-12 sm:-mt-5 flex flex-col items-center z-20">
+        <div className="relative mt-20 sm:-mt-5 flex flex-col items-center z-20">
            {/* Wooden Handle */}
            <div className="w-4 h-28 sm:w-5 sm:h-56 bg-gradient-to-t from-[#4a2e15] to-[#2e1c0d] rounded-t-full shadow-2xl -rotate-[15deg] translate-x-6 sm:translate-x-8 translate-y-6"></div>
            {/* Ladle Head/Bowl */}
@@ -116,7 +119,7 @@ export default function SoupPourSection() {
         {/* The Ceramic Bowl at the bottom */}
         <div 
           ref={bowlRef} 
-          className="absolute bottom-20 sm:bottom-24 left-1/2 transform -translate-x-1/2 w-48 h-16 sm:w-72 sm:h-28 bg-[#d6d6d3] rounded-b-[150px] shadow-[0_30px_50px_rgba(0,0,0,0.15)] opacity-0 translate-y-20 flex justify-center items-start overflow-hidden border-t-8 sm:border-t-[12px] border-[#c0c0bc] z-0"
+          className="absolute bottom-20 sm:bottom-24 left-1/2 transform -translate-x-1/2 w-48 h-16 sm:w-72 sm:h-28 bg-[#d6d6d3] rounded-b-[150px] shadow-[0_30px_50px_rgba(0,0,0,0.15)] opacity-0 translate-y-20 flex justify-center items-start overflow-hidden border-t-8 sm:border-t-[12px] border-[#c0c0bc] z-30"
         >
            {/* Soup rising inside the bowl */}
            <div 

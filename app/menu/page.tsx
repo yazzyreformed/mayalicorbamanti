@@ -130,14 +130,18 @@ export default function MenuPage() {
 
       {/* 2. Sticky Category Navigation */}
       <div className="sticky top-[86px] z-40 bg-[#F9F9F6]/95 backdrop-blur-md border-y border-[#2A3B2C]/10 py-5 transition-shadow shadow-sm">
-        <div className="container mx-auto px-6 overflow-x-auto no-scrollbar">
-          <nav className="flex items-center space-x-8 md:space-x-12 justify-start md:justify-center whitespace-nowrap min-w-max md:min-w-0">
-            {menuData.map(cat => (
+        <div className="container mx-auto overflow-x-auto [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: "none" }}>
+          <nav className="flex items-center space-x-6 sm:space-x-8 md:space-x-12 px-2 sm:px-6 justify-center whitespace-nowrap min-w-max md:min-w-0 w-full mx-auto">
+            {menuData
+              .filter(cat => cat.id !== "yan-urunler")
+              .map((cat, index, filteredArray) => (
               <a 
                 key={cat.id} 
                 href={`#${cat.id}`}
                 onClick={(e) => scrollToCategory(cat.id, e)}
-                className="text-sm font-semibold tracking-[0.2em] uppercase text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors"
+                className={`text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors ${
+                    index === filteredArray.length - 1 ? "pr-8 md:pr-0" : ""
+                }`}
               >
                 {cat.category}
               </a>
@@ -154,11 +158,11 @@ export default function MenuPage() {
               {category.category}
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-y-12 md:gap-y-20 gap-x-4 md:gap-x-12">
               {category.items.map((item, idx) => (
                 <div key={idx} className="menu-item flex flex-col group opacity-0">
                   {/* Organic Shape Menu Image */}
-                  <div className={`w-full mb-6 overflow-hidden clip-rounded-top shadow-lg ${(item as any)?.containerClass || 'h-[18rem] md:h-[22rem] lg:h-[26rem] xl:h-[28rem]'}`}>
+                  <div className={`w-full mb-4 md:mb-6 overflow-hidden clip-rounded-top shadow-lg ${(item as any)?.containerClass || 'h-[12rem] sm:h-[18rem] md:h-[22rem] lg:h-[26rem] xl:h-[28rem]'}`}>
                      <img 
                        src={item.img} 
                        alt={item.name} 
@@ -167,14 +171,14 @@ export default function MenuPage() {
                   </div>
 
                   <div className="flex items-start sm:items-baseline justify-between mb-3 w-full gap-3 sm:gap-0">
-                    <h3 className="text-xl md:text-2xl font-serif text-[#2A3B2C] group-hover:text-[#8B5A2B] transition-colors leading-tight">
+                    <h3 className="text-base sm:text-xl md:text-2xl font-serif text-[#2A3B2C] group-hover:text-[#8B5A2B] transition-colors leading-tight">
                       {item.name}
                     </h3>
                     
                     {/* Dots Separator */}
                     <div className="hidden sm:block flex-grow mx-4 border-b-[2px] border-dotted border-[#2A3B2C]/30 relative top-[-6px] min-w-[20px]"></div>
                     
-                    <span className="text-xl md:text-2xl font-serif text-[#2A3B2C] group-hover:text-[#8B5A2B] transition-colors whitespace-nowrap">
+                    <span className="text-base sm:text-xl md:text-2xl font-serif text-[#2A3B2C] group-hover:text-[#8B5A2B] transition-colors whitespace-nowrap">
                       {item.price}
                     </span>
                   </div>
