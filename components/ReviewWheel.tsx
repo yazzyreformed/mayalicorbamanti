@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper/modules";
-import { Camera } from "lucide-react";
+import { Camera, Star } from "lucide-react";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -108,6 +108,25 @@ export default function ReviewWheel() {
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+
+      {/* Google Review Call to Action Button */}
+      <div className="mt-16 md:mt-24 flex justify-center w-full relative z-30">
+        <a 
+          href="https://www.google.com/search?q=Neva+Mant%C4%B1+Ya%C4%9Flama" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-4 px-8 py-4 md:px-10 md:py-5 bg-[#2A3B2C] text-[#F9F9F6] font-serif tracking-widest uppercase text-sm md:text-base hover:bg-[#8B5A2B] transition-all duration-500 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 transform"
+        >
+          <span className="mt-0.5 whitespace-nowrap drop-shadow-sm">Bizi Google'da Yorumlayın</span>
+          <div className="flex gap-1 opacity-90 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+             <Star className="w-4 h-4 md:w-5 md:h-5 fill-[#FFC107] text-[#FFC107]" />
+             <Star className="w-4 h-4 md:w-5 md:h-5 fill-[#FFC107] text-[#FFC107]" />
+             <Star className="w-4 h-4 md:w-5 md:h-5 fill-[#FFC107] text-[#FFC107]" />
+             <Star className="w-4 h-4 md:w-5 md:h-5 fill-[#FFC107] text-[#FFC107]" />
+             <Star className="w-4 h-4 md:w-5 md:h-5 fill-[#FFC107] text-[#FFC107]" />
+          </div>
+        </a>
       </div>
 
       <style jsx global>{`

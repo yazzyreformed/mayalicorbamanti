@@ -34,26 +34,26 @@ export default function ParallaxSection() {
 
   return (
     <section ref={containerRef} className="py-32 bg-[#2A3B2C] relative overflow-hidden h-[120vh]">
-      <div className="absolute top-[20%] left-[10%] w-[35vw] md:w-[25vw] h-[40vh] parallax-img" data-speed="2">
+      <div className="absolute top-[20%] left-[10%] w-[45vw] md:w-[32vw] h-[48vh] parallax-img" data-speed="2">
         <img 
-          src="/1.png" 
-          alt="Mantı Yapımı" 
+          src="/kayseri mantısı.png" 
+          alt="Kayseri Mantısı" 
           className="w-full h-full object-cover clip-pill opacity-90"
         />
       </div>
       
       <div className="absolute top-[50%] right-[10%] w-[40vw] md:w-[30vw] h-[50vh] parallax-img" data-speed="3.5">
         <img 
-          src="/2.jpeg" 
-          alt="Çorba Servisi" 
-          className="w-full h-full object-cover clip-rounded-top opacity-90"
+          src="/beyran.png" 
+          alt="Beyran" 
+          className="w-full h-full object-cover object-[center_20%] clip-rounded-top opacity-90"
         />
       </div>
 
-      <div className="absolute top-[70%] left-[30%] w-[25vw] md:w-[20vw] h-[30vh] parallax-img" data-speed="1.2">
+      <div className="absolute top-[70%] left-[30%] w-[30vw] md:w-[25vw] h-[38vh] parallax-img" data-speed="1.2">
         <img 
-          src="/3.jpeg" 
-          alt="Taze Baharatlar" 
+          src="/kayseri yağlaması.png" 
+          alt="Kayseri Yağlaması" 
           className="w-full h-full object-cover rounded-[5rem] opacity-90"
         />
       </div>

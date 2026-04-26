@@ -45,7 +45,7 @@ export default function Hero() {
         <Link 
           href="/menu"
           ref={buttonRef}
-          className="mt-16 w-36 h-36 rounded-full border border-[#E8D1B5] text-[#E8D1B5] flex items-center justify-center text-sm font-semibold tracking-widest uppercase hover:bg-[#E8D1B5] hover:text-[#2A3B2C] transition-colors duration-500 cursor-pointer"
+          className="mt-16 w-36 h-36 rounded-full border border-[#C21807]/80 bg-[#C21807]/40 backdrop-blur-md text-[#F9F9F6] flex items-center justify-center text-sm font-semibold tracking-widest uppercase hover:bg-[#C21807] hover:border-[#C21807] transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl hover:scale-105"
         >
           Menüyü Gör
         </Link>

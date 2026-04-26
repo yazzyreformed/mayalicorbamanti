@@ -50,10 +50,10 @@ export default function InteractiveSection() {
         start: "top bottom",
         end: "bottom top",
         onLeave: () => {
-          gsap.to(cursor, { scale: 0, opacity: 0, duration: 0.3 });
+          gsap.to(cursor, { scale: 0, opacity: 0, duration: 0.15 });
         },
         onLeaveBack: () => {
-          gsap.to(cursor, { scale: 0, opacity: 0, duration: 0.3 });
+          gsap.to(cursor, { scale: 0, opacity: 0, duration: 0.15 });
         }
       });
 
@@ -66,12 +66,13 @@ export default function InteractiveSection() {
 
   const handleMouseEnter = (type: string) => {
     setHoveredVideo(type);
-    gsap.to(cursorRef.current, { scale: 1, opacity: 1, duration: 0.6, ease: "elastic.out(1, 0.7)" });
+    gsap.to(cursorRef.current, { scale: 1, opacity: 1, duration: 0.6, ease: "elastic.out(1, 0.7)", overwrite: "auto" });
   };
   
   const handleMouseLeave = () => {
-    gsap.to(cursorRef.current, { scale: 0, opacity: 0, duration: 0.4, ease: "power2.in" });
-    setHoveredVideo(null);
+    // We drastically reduce the duration and use overwrite to prevent ghost cursors.
+    // Also, we don't instantly set hoveredVideo to null so the image stays visible during the fade out animation.
+    gsap.to(cursorRef.current, { scale: 0, opacity: 0, duration: 0.15, ease: "power2.in", overwrite: "auto" });
   };
 
   return (
@@ -81,32 +82,32 @@ export default function InteractiveSection() {
         ref={cursorRef} 
         className="hidden md:block fixed top-0 left-0 w-[380px] h-[380px] rounded-full overflow-hidden pointer-events-none z-50 opacity-0 scale-0 transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_50px_rgba(42,59,44,0.15)] bg-[#2A3B2C]/5 backdrop-blur-sm border border-white/20"
       >
-        {hoveredVideo === "corba" && (
-          <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=800&auto=format&fit=crop" className="w-full h-full object-cover transform scale-125 origin-center" alt="Çorba" />
-        )}
         {hoveredVideo === "manti" && (
-          <img src="/klasik_manti_tabak.png" className="w-full h-full object-cover transform scale-125 origin-center" alt="Mantı" />
+          <img src="/kayseri mantısı.png" className="w-full h-full object-cover transform scale-125 origin-center" alt="Mantı" />
+        )}
+        {hoveredVideo === "yaglama" && (
+          <img src="/kayseri yağlaması kuşbakışı.png" className="w-full h-full object-cover transform scale-125 origin-center" alt="Yağlama" />
         )}
       </div>
 
-      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-32">
-        <Link href="/menu#corbalar" passHref className="md:cursor-none">
-          <h2 
-            className="text-6xl md:text-9xl lg:text-[12rem] font-serif text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors duration-500 md:cursor-none"
-            onMouseEnter={() => handleMouseEnter("corba")}
-            onMouseLeave={handleMouseLeave}
-          >
-            ÇORBA
-          </h2>
-        </Link>
-        <span className="text-3xl md:text-6xl font-serif italic text-stone-300 pointer-events-none">&amp;</span>
+      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 lg:gap-16">
         <Link href="/menu#mantilar" passHref className="md:cursor-none">
           <h2 
-            className="text-6xl md:text-9xl lg:text-[12rem] font-serif text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors duration-500 md:cursor-none"
+            className="text-5xl md:text-8xl lg:text-[7.5rem] xl:text-[9.5rem] font-serif text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors duration-500 md:cursor-none"
             onMouseEnter={() => handleMouseEnter("manti")}
             onMouseLeave={handleMouseLeave}
           >
             MANTI
+          </h2>
+        </Link>
+        <span className="text-3xl md:text-6xl font-serif italic text-stone-300 pointer-events-none">&amp;</span>
+        <Link href="/menu#yaglamalar" passHref className="md:cursor-none">
+          <h2 
+            className="text-5xl md:text-8xl lg:text-[7.5rem] xl:text-[9.5rem] font-serif text-[#2A3B2C] hover:text-[#8B5A2B] transition-colors duration-500 md:cursor-none"
+            onMouseEnter={() => handleMouseEnter("yaglama")}
+            onMouseLeave={handleMouseLeave}
+          >
+            YAĞLAMA
           </h2>
         </Link>
       </div>

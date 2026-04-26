@@ -9,43 +9,39 @@ const menuData = [
     category: "Çorbalar",
     id: "corbalar",
     items: [
-      { name: "Mercimek Çorbası", price: "180 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/mercimek_corba.jpg" },
-      { name: "Ezogelin Çorbası", price: "180 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/ezogelin.jpg" },
-      { name: "Tavuk Çorbası", price: "250 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/tavuk_corbasi.jpg" },
-      { name: "Kelle Paça Çorbası", price: "350 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/kellepaca.jpg" },
+      { name: "Mercimek Çorbası", price: "150 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/mercimek çorbası.png" },
+      { name: "Ezogelin Çorbası", price: "150 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/ezogelin çorbası.png" },
+      { name: "Yayla Çorbası", price: "150 TL", desc: "", img: "/yayla çorbası.png" },
+      { name: "Tavuk Çorbası (Arabaşı)", price: "200 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/arabaşı (tavuk) çorbası.png" },
+      { name: "İşkembe Çorbası", price: "250 TL", desc: "", img: "/işkembe çorbası.png" },
+      { name: "Kelle Paça Çorbası", price: "280 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/kelle paça çorbası.png" },
+      { name: "Etli Kemik Suyu", price: "300 TL", desc: "", img: "/kelle paça çorbası.png" },
+      { name: "Beyran Çorbası", price: "330 TL", desc: "", img: "/beyran.png", imgPosition: "object-[center_15%]" },
     ]
   },
   {
     category: "Mantılar",
     id: "mantilar",
     items: [
-      { name: "Kayseri Mantısı", price: "450 TL", desc: "İsteğe göre yoğurt, sos. Biber turşusu, salata, ekmek ile", img: "/kayseri_mantisi.jpeg" },
-      { name: "Hingel Mantı", price: "450 TL", desc: "İsteğe göre yoğurt, sos. Biber turşusu, salata, ekmek ile", img: "/hingel_manti.jpg" },
-      { name: "Çıtır Mantı", price: "450 TL", desc: "İsteğe göre yoğurt, sos. Biber turşusu, salata, ekmek ile", img: "/citir_manti.jpg" },
+      { name: "Kayseri Mantısı", price: "350 TL", desc: "İsteğe göre yoğurt, sos. Biber turşusu, salata, ekmek ile", img: "/kayseri mantısı.png" },
+      { name: "Çıtır Mantı", price: "350 TL", desc: "İsteğe göre yoğurt, sos. Biber turşusu, salata, ekmek ile", img: "/Çıtır mantı.png" },
+      { name: "Hingel Mantı", price: "350 TL", desc: "İsteğe göre yoğurt, sos. Biber turşusu, salata, ekmek ile", img: "/hingel mantı.png" },
+      { name: "Tepsi Mantı", price: "400 TL", desc: "", img: "/tepsi mantı.png" },
     ]
   },
   {
-    category: "Yağlamalar",
+    category: "Kayseri Yağlaması",
     id: "yaglamalar",
     items: [
-      { name: "Kayseri Yağlaması", price: "500 TL", desc: "Biber turşusu, salata, yoğurt ile", img: "/yaglama_tabak.png" },
+      { name: "Kayseri Yağlaması", price: "400 TL", desc: "Biber turşusu, salata, yoğurt ile", img: "/kayseri yağlaması.png", containerClass: "h-64 md:h-72 lg:h-[20rem] xl:h-[22rem]", imgPosition: "object-[center_60%]" },
     ]
   },
   {
-    category: "Ekstra",
-    id: "ekstra",
+    category: "Yan Ürünler",
+    id: "yan-urunler",
     items: [
-      { name: "Ev Yapımı İçli Köfte (Kızartılmış)", price: "130 TL", desc: "Tek kişilik", img: "/icli_kofte.jpeg" },
-    ]
-  },
-  {
-    category: "İçecekler",
-    id: "icecekler",
-    items: [
-      { name: "Sarıyer Kola (33 cl.)", price: "60 TL", desc: "Kutu içecek", img: "/sariyer_kola.jpg" },
-      { name: "Sarıyer Portakal (33 cl.)", price: "60 TL", desc: "Kutu içecek", img: "/sariyer_portakal.jpg" },
-      { name: "Sarıyer Gazoz (25 cl.)", price: "40 TL", desc: "Cam şişe", img: "/sariyer_gazoz.jpg" },
-      { name: "Su (50 cl.)", price: "20 TL", desc: "Pet şişe", img: "/su.jpg" },
+      { name: "İçli Köfte (2 adet)", price: "200 TL", desc: "Kızartılmış", img: "/içli köfte.png", containerClass: "h-64 md:h-72 lg:h-[20rem] xl:h-[22rem]", imgPosition: "object-center" },
+      { name: "Zeytinyağlı Yaprak Sarma", price: "150 TL", desc: "", img: "/zeytinyağlı yaprak sarma.png", containerClass: "h-64 md:h-72 lg:h-[20rem] xl:h-[22rem]", imgPosition: "object-[center_20%]" },
     ]
   }
 ];
@@ -162,11 +158,11 @@ export default function MenuPage() {
               {category.items.map((item, idx) => (
                 <div key={idx} className="menu-item flex flex-col group opacity-0">
                   {/* Organic Shape Menu Image */}
-                  <div className="w-full h-64 md:h-72 mb-6 overflow-hidden clip-rounded-top shadow-lg">
+                  <div className={`w-full mb-6 overflow-hidden clip-rounded-top shadow-lg ${(item as any)?.containerClass || 'h-[18rem] md:h-[22rem] lg:h-[26rem] xl:h-[28rem]'}`}>
                      <img 
                        src={item.img} 
                        alt={item.name} 
-                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                       className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${item.imgPosition || 'object-[center_35%]'}`}
                      />
                   </div>
 
@@ -183,11 +179,7 @@ export default function MenuPage() {
                     </span>
                   </div>
                   
-                  {item.desc && (
-                    <p className="text-stone-600 text-base md:text-lg leading-relaxed mb-3">
-                      {item.desc}
-                    </p>
-                  )}
+                  
                 </div>
               ))}
             </div>

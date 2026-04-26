@@ -9,11 +9,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const dishes = [
-  { id: 1, name: "Tepsi Mantı", img: "/tepsimanti.png" },
-  { id: 2, name: "Mercimek Çorbası", img: "/mercimek_tabak.png" },
-  { id: 3, name: "Yağlama", img: "/yaglama_tabak.png" },
-  { id: 4, name: "Klasik Mantı", img: "/klasik_manti_tabak.png" },
-  { id: 5, name: "Çıtır Mantı", img: "/citirmanti_tabak.png" },
+  { id: 1, name: "Kayseri Mantısı", img: "/kayserilezzet.png", baseScale: 1.05, yOffset: 0 },
+  { id: 2, name: "Çıtır Mantı", img: "/citirlezzet.png", baseScale: 0.9, yOffset: 20 },
+  { id: 3, name: "Tepsi Mantı", img: "/tepsilezzet.png", baseScale: 1, yOffset: 0 },
+  { id: 4, name: "Kayseri Yağlaması", img: "/yaglamalezzet.png", baseScale: 1, yOffset: 0 },
 ];
 
 export default function DishCarousel() {
@@ -26,7 +25,7 @@ export default function DishCarousel() {
       gsap.fromTo(
         img, 
         { rotation: 90, scale: 0.95 },   // 90 derece dönüş açısı
-        { rotation: 0, scale: 1.1, duration: 1.4, ease: "power2.out" }
+        { rotation: 0, scale: 1.26, duration: 1.4, ease: "power2.out" }
       );
     });
   }, [currentIndex]);
@@ -64,15 +63,17 @@ export default function DishCarousel() {
               {({ isActive }) => (
                 <div className="w-full h-full flex flex-col items-center justify-center relative">
                   <div 
-                    className={`w-[260px] h-[260px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden mb-8 md:mb-10 shadow-2xl relative transition-opacity duration-1000 ${isActive ? 'opacity-100' : 'opacity-20'}`}
+                    className={`w-[260px] h-[260px] md:w-[450px] md:h-[450px] mb-8 md:mb-10 relative transition-opacity duration-1000 ${isActive ? 'opacity-100' : 'opacity-20'}`}
+                    style={{ transform: "translateZ(0)" }}
                   >
-                    <img 
-                      src={dish.img} 
-                      alt={dish.name}
-                      className={`w-full h-full object-cover ${isActive ? 'carousel-img-active' : ''}`}
-                      style={{ transform: "scale(1.1)" }}
-                    />
-                    <div className="absolute inset-0 rounded-full border-2 border-white/20 mix-blend-overlay"></div>
+                    <div className={`w-full h-full ${isActive ? 'carousel-img-active' : ''}`}>
+                      <img 
+                        src={dish.img} 
+                        alt={dish.name}
+                        className="w-full h-full object-contain drop-shadow-2xl"
+                        style={{ transform: `scale(${dish.baseScale || 1}) translateY(${dish.yOffset || 0}px)` }}
+                      />
+                    </div>
                   </div>
                   <h4 
                     className={`text-4xl md:text-6xl font-serif text-[#2A3B2C] drop-shadow-sm transition-all duration-1000 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
