@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,11 +28,16 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="relative w-full h-screen overflow-hidden bg-[#2A3B2C]">
-      {/* Background Image / Placeholder */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.65]"
-        style={{ backgroundImage: "url('/hero.jpg?v=2')" }}
-      />
+      <div className="absolute inset-0 z-0 opacity-65">
+        <Image
+          src="/hero.jpg"
+          alt="Neva Hero"
+          fill
+          priority={true}
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
       
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 mt-16">

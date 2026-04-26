@@ -77,6 +77,7 @@ export default function Navbar() {
                 alt="Neva Mantı" 
                 width={200}
                 height={100}
+                priority={true}
                 draggable={false}
                 className="relative h-[80px] w-auto md:h-[100px] object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)] select-none pointer-events-none" 
               />

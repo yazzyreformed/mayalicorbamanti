@@ -153,7 +153,7 @@ export default function MenuPage() {
 
       {/* 3. Categories Content */}
       <div className="container mx-auto px-6 mt-16 md:mt-24 space-y-32 md:space-y-48">
-        {menuData.map(category => (
+        {menuData.map((category, catIndex) => (
           <section key={category.id} id={category.id} className="menu-category pt-8">
             <h2 className="menu-header text-5xl md:text-7xl lg:text-8xl font-serif text-[#E8D1B5] mb-12 md:mb-16 text-center md:text-left drop-shadow-sm opacity-0">
               {category.category}
@@ -168,6 +168,7 @@ export default function MenuPage() {
                        src={item.img} 
                        alt={item.name} 
                        fill
+                       priority={catIndex === 0 && idx < 4}
                        sizes="(max-width: 768px) 50vw, 33vw"
                        className={`object-cover transition-transform duration-700 group-hover:scale-105 ${item.imgPosition || 'object-[center_35%]'}`}
                      />
