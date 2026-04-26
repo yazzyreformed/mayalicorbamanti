@@ -113,21 +113,29 @@ export default function ReviewWheel() {
         </Swiper>
       </div>
 
-      {/* Google Review Call to Action Button */}
-      <div className="mt-16 md:mt-24 flex justify-center w-full relative z-30">
+      {/* Google Review Call to Action Section */}
+      <div className="mt-20 md:mt-32 flex flex-col items-center justify-center w-full relative z-30 px-6">
+        <h3 className="text-3xl md:text-5xl font-serif text-[#2A3B2C] mb-3 text-center">
+          BİZİ DEĞERLENDİRİN
+        </h3>
+        <p className="text-stone-600 italic text-center mb-8 max-w-lg md:text-lg">
+          Kıymetli yorumlarınız ile desteklerinizi bekliyoruz.
+        </p>
+
         <a 
           href="https://www.google.com/search?q=Neva+Mant%C4%B1+Ya%C4%9Flama" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-4 px-8 py-4 md:px-10 md:py-5 bg-[#2A3B2C] text-[#F9F9F6] font-serif tracking-widest uppercase text-sm md:text-base hover:bg-[#8B5A2B] transition-all duration-500 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 transform"
+          className="group inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 bg-[#2A3B2C] text-[#F9F9F6] font-serif tracking-widest uppercase text-sm md:text-base hover:bg-[#8B5A2B] transition-all duration-500 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 transform"
         >
-          <span className="mt-0.5 whitespace-nowrap drop-shadow-sm">Bizi Google'da Yorumlayın</span>
-          <div className="flex gap-1 opacity-90 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
-             <Star className="w-4 h-4 md:w-5 md:h-5 fill-[#FFC107] text-[#FFC107]" />
-             <Star className="w-4 h-4 md:w-5 md:h-5 fill-[#FFC107] text-[#FFC107]" />
-             <Star className="w-4 h-4 md:w-5 md:h-5 fill-[#FFC107] text-[#FFC107]" />
-             <Star className="w-4 h-4 md:w-5 md:h-5 fill-[#FFC107] text-[#FFC107]" />
-             <Star className="w-4 h-4 md:w-5 md:h-5 fill-[#FFC107] text-[#FFC107]" />
+          <span className="font-serif font-bold flex items-center justify-center w-6 h-6 md:w-7 md:h-7 bg-white text-[#2A3B2C] rounded-full mr-1">G</span>
+          <span className="mt-0.5 whitespace-nowrap drop-shadow-sm font-semibold tracking-wider">Google'da Yorum Yaz</span>
+          <div className="flex gap-1 ml-2 opacity-90 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+             <Star className="w-3.5 h-3.5 md:w-4 md:h-4 fill-[#FFC107] text-[#FFC107]" />
+             <Star className="w-3.5 h-3.5 md:w-4 md:h-4 fill-[#FFC107] text-[#FFC107]" />
+             <Star className="w-3.5 h-3.5 md:w-4 md:h-4 fill-[#FFC107] text-[#FFC107]" />
+             <Star className="w-3.5 h-3.5 md:w-4 md:h-4 fill-[#FFC107] text-[#FFC107]" />
+             <Star className="w-3.5 h-3.5 md:w-4 md:h-4 fill-[#FFC107] text-[#FFC107]" />
           </div>
         </a>
       </div>

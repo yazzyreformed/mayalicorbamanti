@@ -96,11 +96,19 @@ export default function AboutPage() {
       <section className="py-20 md:py-48 container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
           
-          <div className="w-full md:w-1/2 order-2 md:order-1 reveal-text">
-            <h2 className="text-5xl sm:text-6xl md:text-8xl font-serif tracking-tighter mb-6 md:mb-8 text-[#2A3B2C]">
+          <div className="w-full md:w-1/2 order-2 md:order-1 reveal-text flex flex-col gap-6 md:gap-8">
+            <h2 className="text-5xl sm:text-6xl md:text-8xl font-serif tracking-tighter mb-2 text-[#2A3B2C]">
               neva'nın hikayesi
             </h2>
-            <p className="text-lg md:text-xl text-stone-700 leading-relaxed font-sans mb-8">
+
+            <div className="bg-[#2A3B2C]/5 border-l-4 border-[#8B5A2B] p-6 rounded-r-2xl">
+              <h3 className="text-2xl font-serif text-[#2A3B2C] mb-2 tracking-tight">neva'nın anlamı</h3>
+              <p className="text-stone-700 italic font-sans leading-relaxed text-base md:text-lg">
+                Temel olarak ses, ahenk, nağme ve uyum anlamına gelir. Aynı zamanda Klasik Türk müziğinde bir makam adı, refah, zenginlik, güç ve nasip/kısmet anlamlarını da taşır.
+              </p>
+            </div>
+
+            <p className="text-lg md:text-xl text-stone-700 leading-relaxed font-sans">
               Her çorba kasesinde, her mantı tanesinde geçmişten gelen bir miras taşıyoruz. Neva, annelerimizin mutfağındaki o eşsiz kokuyu ve özeni günümüzün hızlı dünyasında yeniden canlandırmak arzusuyla kuruldu.
             </p>
             <p className="text-lg md:text-xl text-stone-700 leading-relaxed font-sans">
@@ -160,8 +168,11 @@ export default function AboutPage() {
             <h2 className="text-5xl sm:text-6xl md:text-8xl font-serif tracking-tighter mb-6 md:mb-8 text-[#2A3B2C] leading-none">
               kaynağından <br className="hidden sm:block" /> sofraya
             </h2>
+            <p className="text-lg md:text-xl text-stone-700 leading-relaxed font-sans mb-6">
+              En iyi yemeğin en iyi malzeme ile başladığına inanıyoruz. Bu yüzden unumuzu değirmenden, etimizi yöresel kasabımızdan, baharatlarımızı ise hasat edildiği bölgelerden doğrudan temin ediyoruz.
+            </p>
             <p className="text-lg md:text-xl text-stone-700 leading-relaxed font-sans mb-8">
-              En iyi yemeğin en iyi malzemeyle başladığına inanıyoruz. Bu yüzden unumuzu değirmenden, etimizi yöresel kasabımızdan, baharatlarımızı ise hasat edildiği bölgelerden doğrudan temin ediyoruz.
+              Tüm ürünlerimiz kendi imalatımızdır. Özenle seçtiğimiz ham maddeleri kendi mutfağımızda el emeği ile üreterek sizlerin beğenisine sunuyoruz.
             </p>
             <p className="text-xl md:text-2xl text-[#8B5A2B] leading-relaxed font-serif mt-4 italic">
               Sevgiyle yoğruluyor, özenle sarılıyor.
