@@ -9,13 +9,13 @@ const menuData = [
     category: "Çorbalar",
     id: "corbalar",
     items: [
-      { name: "Mercimek Çorbası", price: "150 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/mercimek çorbası.png" },
-      { name: "Ezogelin Çorbası", price: "150 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/ezogelin çorbası.png" },
-      { name: "Yayla Çorbası", price: "150 TL", desc: "", img: "/yayla çorbası.png" },
-      { name: "Tavuk Çorbası (Arabaşı)", price: "200 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/arabaşı (tavuk) çorbası.png" },
-      { name: "İşkembe Çorbası", price: "250 TL", desc: "", img: "/işkembe çorbası.png" },
-      { name: "Kelle Paça Çorbası", price: "280 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/kelle paça çorbası.png" },
-      { name: "Etli Kemik Suyu", price: "300 TL", desc: "", img: "/kelle paça çorbası.png" },
+      { name: "Mercimek Çorbası", price: "150 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/mercimek_corbasi.png" },
+      { name: "Ezogelin Çorbası", price: "150 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/ezogelin_corbasi.png" },
+      { name: "Yayla Çorbası", price: "150 TL", desc: "", img: "/yayla_corbasi.png" },
+      { name: "Tavuk Çorbası (Arabaşı)", price: "200 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/arabasi_corbasi.png" },
+      { name: "İşkembe Çorbası", price: "250 TL", desc: "", img: "/iskembe_corbasi.png" },
+      { name: "Kelle Paça Çorbası", price: "280 TL", desc: "Biber turşusu, turp, ekmek ile", img: "/kelle_paca_corbasi.png" },
+      { name: "Etli Kemik Suyu", price: "300 TL", desc: "", img: "/kelle_paca_corbasi.png" },
       { name: "Beyran Çorbası", price: "330 TL", desc: "", img: "/beyran.png", imgPosition: "object-[center_15%]" },
     ]
   },
@@ -23,25 +23,25 @@ const menuData = [
     category: "Mantılar",
     id: "mantilar",
     items: [
-      { name: "Kayseri Mantısı", price: "350 TL", desc: "İsteğe göre yoğurt, sos. Biber turşusu, salata, ekmek ile", img: "/kayseri mantısı.png" },
-      { name: "Çıtır Mantı", price: "350 TL", desc: "İsteğe göre yoğurt, sos. Biber turşusu, salata, ekmek ile", img: "/Çıtır mantı.png" },
-      { name: "Hingel Mantı", price: "350 TL", desc: "İsteğe göre yoğurt, sos. Biber turşusu, salata, ekmek ile", img: "/hingel mantı.png" },
-      { name: "Tepsi Mantı", price: "400 TL", desc: "", img: "/tepsi mantı.png" },
+      { name: "Kayseri Mantısı", price: "350 TL", desc: "İsteğe göre yoğurt, sos. Biber turşusu, salata, ekmek ile", img: "/kayseri_mantisi.png" },
+      { name: "Çıtır Mantı", price: "350 TL", desc: "İsteğe göre yoğurt, sos. Biber turşusu, salata, ekmek ile", img: "/citir_manti.png" },
+      { name: "Hingel Mantı", price: "350 TL", desc: "İsteğe göre yoğurt, sos. Biber turşusu, salata, ekmek ile", img: "/hingel_manti.png" },
+      { name: "Tepsi Mantı", price: "400 TL", desc: "", img: "/tepsi_manti.png" },
     ]
   },
   {
     category: "Kayseri Yağlaması",
     id: "yaglamalar",
     items: [
-      { name: "Kayseri Yağlaması", price: "400 TL", desc: "Biber turşusu, salata, yoğurt ile", img: "/kayseri yağlaması.png", containerClass: "h-64 md:h-72 lg:h-[20rem] xl:h-[22rem]", imgPosition: "object-[center_60%]" },
+      { name: "Kayseri Yağlaması", price: "400 TL", desc: "Biber turşusu, salata, yoğurt ile", img: "/kayseri_yaglamasi.png", containerClass: "h-64 md:h-72 lg:h-[20rem] xl:h-[22rem]", imgPosition: "object-[center_60%]" },
     ]
   },
   {
     category: "Yan Ürünler",
     id: "yan-urunler",
     items: [
-      { name: "İçli Köfte (2 adet)", price: "200 TL", desc: "Kızartılmış", img: "/içli köfte.png", containerClass: "h-64 md:h-72 lg:h-[20rem] xl:h-[22rem]", imgPosition: "object-center" },
-      { name: "Zeytinyağlı Yaprak Sarma", price: "150 TL", desc: "", img: "/zeytinyağlı yaprak sarma.png", containerClass: "h-64 md:h-72 lg:h-[20rem] xl:h-[22rem]", imgPosition: "object-[center_20%]" },
+      { name: "İçli Köfte (2 adet)", price: "200 TL", desc: "Kızartılmış", img: "/icli_kofte.png", containerClass: "h-64 md:h-72 lg:h-[20rem] xl:h-[22rem]", imgPosition: "object-center" },
+      { name: "Zeytinyağlı Yaprak Sarma", price: "150 TL", desc: "", img: "/zeytinyagli_yaprak_sarma.png", containerClass: "h-64 md:h-72 lg:h-[20rem] xl:h-[22rem]", imgPosition: "object-[center_20%]" },
     ]
   }
 ];

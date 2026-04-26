@@ -36,7 +36,7 @@ export default function ParallaxSection() {
     <section ref={containerRef} className="py-32 bg-[#2A3B2C] relative overflow-hidden h-[120vh]">
       <div className="absolute top-[20%] left-[10%] w-[45vw] md:w-[32vw] h-[48vh] parallax-img" data-speed="2">
         <img 
-          src="/kayseri mantısı.png" 
+          src="/kayseri_mantisi.png" 
           alt="Kayseri Mantısı" 
           className="w-full h-full object-cover clip-pill opacity-90"
         />
@@ -52,7 +52,7 @@ export default function ParallaxSection() {
 
       <div className="absolute top-[70%] left-[30%] w-[30vw] md:w-[25vw] h-[38vh] parallax-img" data-speed="1.2">
         <img 
-          src="/kayseri yağlaması.png" 
+          src="/kayseri_yaglamasi.png" 
           alt="Kayseri Yağlaması" 
           className="w-full h-full object-cover rounded-[5rem] opacity-90"
         />

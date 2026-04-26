@@ -83,10 +83,10 @@ export default function InteractiveSection() {
         className="hidden md:block fixed top-0 left-0 w-[380px] h-[380px] rounded-full overflow-hidden pointer-events-none z-50 opacity-0 scale-0 transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_50px_rgba(42,59,44,0.15)] bg-[#2A3B2C]/5 backdrop-blur-sm border border-white/20"
       >
         {hoveredVideo === "manti" && (
-          <img src="/kayseri mantısı.png" className="w-full h-full object-cover transform scale-125 origin-center" alt="Mantı" />
+          <img src="/kayseri_mantisi.png" className="w-full h-full object-cover transform scale-125 origin-center" alt="Mantı" />
         )}
         {hoveredVideo === "yaglama" && (
-          <img src="/kayseri yağlaması kuşbakışı.png" className="w-full h-full object-cover transform scale-125 origin-center" alt="Yağlama" />
+          <img src="/kayseri_yaglamasi_kusbakisi.png" className="w-full h-full object-cover transform scale-125 origin-center" alt="Yağlama" />
         )}
       </div>
 
