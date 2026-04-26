@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 import IngredientMouseTrack from "@/components/IngredientMouseTrack";
 
@@ -109,12 +110,16 @@ export default function AboutPage() {
 
           <div className="w-full md:w-1/2 px-0 md:px-8 order-1 md:order-2 flex justify-center">
             {/* Custom Mask Image */}
-            <div className="w-[85vw] h-[55vh] md:w-[450px] md:h-[600px] overflow-hidden rounded-[4rem] md:rounded-[12rem] opacity-0 reveal-text relative shadow-2xl">
-              <img 
-                src="/hikayemiz.jpg" 
-                alt="Restaurant Exterior" 
-                className="parallax-img w-full h-[120%] object-cover absolute top-[-10%]"
-              />
+            <div className="w-[85vw] h-[55vh] md:w-[450px] md:h-[600px] overflow-hidden rounded-[4rem] md:rounded-[12rem] opacity-0 reveal-text relative shadow-2xl z-0">
+              <div className="parallax-img absolute w-full h-[120%] top-[-10%] left-0">
+                <Image 
+                  src="/hikayemiz.jpg" 
+                  alt="Restaurant Exterior" 
+                  fill
+                  sizes="(max-width: 768px) 85vw, 450px"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -138,12 +143,16 @@ export default function AboutPage() {
           
           <div className="w-full md:w-1/2 flex justify-center">
             {/* Custom Mask Image - Circle */}
-            <div className="w-[85vw] h-[85vw] max-w-[400px] max-h-[400px] md:w-[500px] md:h-[500px] overflow-hidden rounded-full opacity-0 reveal-text relative shadow-2xl">
-              <img 
-                src="/kaynagindan_sofraya.jpg" 
-                alt="Chef preparing food" 
-                className="parallax-img w-full h-[120%] object-cover absolute top-[-10%]"
-              />
+            <div className="w-[85vw] h-[85vw] max-w-[400px] max-h-[400px] md:w-[500px] md:h-[500px] overflow-hidden rounded-full opacity-0 reveal-text relative shadow-2xl z-0">
+              <div className="parallax-img absolute w-full h-[120%] top-[-10%] left-0">
+                <Image 
+                  src="/kaynagindan_sofraya.jpg" 
+                  alt="Chef preparing food" 
+                  fill
+                  sizes="(max-width: 768px) 85vw, 500px"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
 

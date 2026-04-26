@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function InteractiveSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -30,7 +31,7 @@ export default function InteractiveSection() {
         const xOffset = (e.clientX / window.innerWidth - 0.5) * 2;
         const yOffset = (e.clientY / window.innerHeight - 0.5) * 2;
         
-        const imgs = cursor?.querySelectorAll("img");
+        const imgs = cursor?.querySelectorAll(".gsap-img");
         if (imgs && imgs.length > 0) {
           gsap.to(imgs, {
             x: -xOffset * 80,
@@ -83,10 +84,10 @@ export default function InteractiveSection() {
         className="hidden md:block fixed top-0 left-0 w-[380px] h-[380px] rounded-full overflow-hidden pointer-events-none z-50 opacity-0 scale-0 transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_50px_rgba(42,59,44,0.15)] bg-[#2A3B2C]/5 backdrop-blur-sm border border-white/20"
       >
         {hoveredVideo === "manti" && (
-          <img src="/kayseri_mantisi.png" className="w-full h-full object-cover transform scale-125 origin-center" alt="Mantı" />
+          <Image src="/kayseri_mantisi.png" fill sizes="380px" className="gsap-img object-cover transform scale-125 origin-center" alt="Mantı" />
         )}
         {hoveredVideo === "yaglama" && (
-          <img src="/kayseri_yaglamasi_kusbakisi.png" className="w-full h-full object-cover transform scale-125 origin-center" alt="Yağlama" />
+          <Image src="/kayseri_yaglamasi_kusbakisi.png" fill sizes="380px" className="gsap-img object-cover transform scale-125 origin-center" alt="Yağlama" />
         )}
       </div>
 

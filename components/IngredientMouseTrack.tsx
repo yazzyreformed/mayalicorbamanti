@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Image from "next/image";
 
 const ingredients = [
   { id: 1, src: "https://images.unsplash.com/photo-1501420193726-1f65acd36cda?q=80&w=400&auto=format&fit=crop", top: "10%", left: "5%", size: "w-24 md:w-40", speed: 0.12 }, // Garlic
@@ -52,7 +53,7 @@ export default function IngredientMouseTrack() {
           className={`ingredient-item absolute z-0 opacity-40 pointer-events-none rounded-full overflow-hidden blur-[1px] ${ing.size} aspect-square shadow-2xl`}
           style={{ top: ing.top, left: ing.left }}
         >
-          <img src={ing.src} alt="Ingredient" className="w-full h-full object-cover scale-110" />
+          <Image src={ing.src} alt="Ingredient" fill sizes="(max-width: 768px) 150px, 200px" className="object-cover scale-110" />
         </div>
       ))}
 

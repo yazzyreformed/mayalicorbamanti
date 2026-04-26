@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -71,11 +72,13 @@ export default function Navbar() {
             <div className="relative group">
               {/* Optional Subtle Glow behind logo when scrolled */}
               <div className={`absolute inset-0 rounded-full blur-2xl transition-opacity duration-700 ${scrolled && !mobileMenuOpen ? 'bg-white/50 opacity-100' : 'opacity-0'}`}></div>
-              <img 
-                src="/logo.png?v=2" 
-                alt="Neva Çorba & Mantı" 
-                draggable="false"
-                className="relative h-[80px] md:h-[100px] object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)] select-none pointer-events-none" 
+              <Image 
+                src="/logo.png" 
+                alt="Neva Mantı" 
+                width={200}
+                height={100}
+                draggable={false}
+                className="relative h-[80px] w-auto md:h-[100px] object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)] select-none pointer-events-none" 
               />
             </div>
           </Link>

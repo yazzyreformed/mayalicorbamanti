@@ -16,8 +16,35 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Neva Çorba Mantı",
-  description: "Geleneksel lezzetlerin modern sunumu. El yapımı mantı ve taze çorbalar.",
+  title: "Neva Mantı | Gerçek Lezzet",
+  description: "Nesilden nesile aktarılan ustalıkla, en doğal taze malzemelerden hazırlanan klasik Kayseri Mantısı, Yağlaması ve Çorbaları.",
+  keywords: "neva, neva mantı, kayseri mantısı, yağlama, tepsi mantı, beyran, çorba, restoran",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
+  openGraph: {
+    title: "Neva Mantı",
+    description: "Doğal, katkısız, lezzetli. Orijinal Kayseri Mantısı ve nefis çorbalarımızı keşfedin. WhatsApp veya Instagram'dan menümüze göz atabilirsiniz.",
+    url: "https://nevamanti.com", // İleride gerçek domain eklendiğinde buraya yazılacak
+    siteName: "Neva Mantı",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Neva Mantı Logo",
+      },
+    ],
+    locale: "tr_TR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Neva Mantı",
+    description: "Geleneksel lezzetlerin modern sunumu. El yapımı mantı ve taze çorbalar.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({

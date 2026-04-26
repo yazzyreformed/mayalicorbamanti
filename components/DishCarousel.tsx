@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import gsap from "gsap";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
@@ -66,11 +67,13 @@ export default function DishCarousel() {
                     className={`w-[260px] h-[260px] md:w-[450px] md:h-[450px] mb-8 md:mb-10 relative transition-opacity duration-1000 ${isActive ? 'opacity-100' : 'opacity-20'}`}
                     style={{ transform: "translateZ(0)" }}
                   >
-                    <div className={`w-full h-full ${isActive ? 'carousel-img-active' : ''}`}>
-                      <img 
+                    <div className={`relative w-full h-full ${isActive ? 'carousel-img-active' : ''}`}>
+                      <Image 
                         src={dish.img} 
                         alt={dish.name}
-                        className="w-full h-full object-contain drop-shadow-2xl"
+                        fill
+                        sizes="(max-width: 768px) 260px, 450px"
+                        className="object-contain drop-shadow-2xl"
                         style={{ transform: `scale(${dish.baseScale || 1}) translateY(${dish.yOffset || 0}px)` }}
                       />
                     </div>

@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start space-y-4">
           <Link href="/" className="text-3xl font-serif font-bold tracking-widest flex flex-col">
             <span>NEVA</span>
-            <span className="text-[#E8D1B5] text-sm font-sans tracking-normal mt-1">ÇORBA & MANTI</span>
+            <span className="text-[#E8D1B5] text-sm font-sans tracking-normal mt-1">MANTI</span>
           </Link>
           <p className="text-sm text-[#D3C7B6] max-w-xs leading-relaxed">
             Tamamen doğal malzemeler ile eski usül, geleneksel bir lezzet deneyimi. Doğadan ilham alıyor, sevgiyle sunuyoruz.
@@ -38,7 +38,7 @@ export default function Footer() {
       </div>
       
       <div className="mt-16 pt-8 border-t border-[#3A4E3D] text-center text-xs text-[#A9BBAA] flex flex-col md:flex-row justify-center items-center gap-4">
-        <span>© {new Date().getFullYear()} Neva Çorba Mantı. Tüm hakları saklıdır.</span>
+        <span>© {new Date().getFullYear()} Neva Mantı. Tüm hakları saklıdır.</span>
       </div>
     </footer>
   );

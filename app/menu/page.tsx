@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -162,11 +163,13 @@ export default function MenuPage() {
               {category.items.map((item, idx) => (
                 <div key={idx} className="menu-item flex flex-col group opacity-0">
                   {/* Organic Shape Menu Image */}
-                  <div className={`w-full mb-4 md:mb-6 overflow-hidden clip-rounded-top shadow-lg ${(item as any)?.containerClass || 'h-[12rem] sm:h-[18rem] md:h-[22rem] lg:h-[26rem] xl:h-[28rem]'}`}>
-                     <img 
+                  <div className={`relative w-full mb-4 md:mb-6 overflow-hidden clip-rounded-top shadow-lg ${(item as any)?.containerClass || 'h-[12rem] sm:h-[18rem] md:h-[22rem] lg:h-[26rem] xl:h-[28rem]'}`}>
+                     <Image 
                        src={item.img} 
                        alt={item.name} 
-                       className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${item.imgPosition || 'object-[center_35%]'}`}
+                       fill
+                       sizes="(max-width: 768px) 50vw, 33vw"
+                       className={`object-cover transition-transform duration-700 group-hover:scale-105 ${item.imgPosition || 'object-[center_35%]'}`}
                      />
                   </div>
 

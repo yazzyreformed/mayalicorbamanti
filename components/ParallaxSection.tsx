@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -55,26 +56,32 @@ export default function ParallaxSection() {
     <section ref={containerRef} className="py-20 md:py-32 bg-[#2A3B2C] relative overflow-hidden h-[85vh] md:h-[120vh]">
 
       <div className="absolute top-[12%] left-[2%] w-[45vw] md:w-[32vw] h-[25vh] md:h-[48vh] parallax-img" data-speed="2">
-        <img 
+        <Image 
           src="/kayseri_mantisi.png" 
           alt="Kayseri Mantısı" 
-          className="w-full h-full object-cover clip-pill opacity-90"
+          fill
+          sizes="(max-width: 768px) 45vw, 32vw"
+          className="object-cover clip-pill opacity-90"
         />
       </div>
       
       <div className="absolute top-[40%] right-[2%] w-[50vw] md:w-[30vw] h-[30vh] md:h-[50vh] parallax-img" data-speed="3.5">
-        <img 
+        <Image 
           src="/beyran.png" 
           alt="Beyran" 
-          className="w-full h-full object-cover object-[center_20%] clip-rounded-top opacity-90"
+          fill
+          sizes="(max-width: 768px) 50vw, 30vw"
+          className="object-cover object-[center_20%] clip-rounded-top opacity-90"
         />
       </div>
 
       <div className="absolute top-[65%] left-[10%] w-[45vw] md:w-[25vw] h-[22vh] md:h-[38vh] parallax-img" data-speed="1.2">
-        <img 
+        <Image 
           src="/kayseri_yaglamasi.png" 
           alt="Kayseri Yağlaması" 
-          className="w-full h-full object-cover rounded-[3rem] opacity-90"
+          fill
+          sizes="(max-width: 768px) 45vw, 25vw"
+          className="object-cover rounded-[3rem] opacity-90"
         />
       </div>
 

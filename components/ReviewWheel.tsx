@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper/modules";
 import { Camera, Star } from "lucide-react";
+import Image from "next/image";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -99,10 +100,12 @@ export default function ReviewWheel() {
             >
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl bg-stone-100 border border-stone-200 flex items-center justify-center group pointer-events-none">
                 {/* Photo anchored to the right side instead of panning */}
-                <img 
+                <Image 
                   src={story.storyImage} 
                   alt="Review" 
-                  className="w-full h-full object-cover object-right transition-transform duration-[10s] ease-linear group-hover:scale-[1.05]" 
+                  fill
+                  sizes="(max-width: 768px) 280px, 360px"
+                  className="object-cover object-right transition-transform duration-[10s] ease-linear group-hover:scale-[1.05]" 
                 />
               </div>
             </SwiperSlide>
