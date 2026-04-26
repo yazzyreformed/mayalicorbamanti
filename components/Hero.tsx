@@ -34,6 +34,8 @@ export default function Hero() {
           alt="Neva Hero"
           fill
           priority={true}
+          quality={100}
+          unoptimized={true}
           sizes="100vw"
           className="object-cover object-center"
         />

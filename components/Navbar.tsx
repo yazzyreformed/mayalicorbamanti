@@ -3,11 +3,21 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (pathname === "/" && href === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setMobileMenuOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,6 +70,7 @@ export default function Navbar() {
               } after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:transition-all after:duration-300 hover:after:w-full ${
                 scrolled ? "after:bg-[#2A3B2C]" : "after:bg-[#E8D1B5]"
               }`}
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.name}
             </Link>
@@ -68,7 +79,7 @@ export default function Navbar() {
 
         {/* LOGO (Center) - Slightly Adjusted */}
         <div className="flex justify-start md:justify-center col-span-2 md:col-span-1 relative z-50">
-          <Link href="/" className="flex flex-col items-center justify-center transform -translate-y-1 md:-translate-y-2 cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
+          <Link href="/" className="flex flex-col items-center justify-center transform -translate-y-1 md:-translate-y-2 cursor-pointer" onClick={(e) => handleNavClick(e, "/")}>
             <div className="relative group">
               {/* Optional Subtle Glow behind logo when scrolled */}
               <div className={`absolute inset-0 rounded-full blur-2xl transition-opacity duration-700 ${scrolled && !mobileMenuOpen ? 'bg-white/50 opacity-100' : 'opacity-0'}`}></div>
@@ -96,6 +107,7 @@ export default function Navbar() {
               } after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:transition-all after:duration-300 hover:after:w-full ${
                 scrolled ? "after:bg-[#2A3B2C]" : "after:bg-[#E8D1B5]"
               }`}
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.name}
             </Link>
@@ -147,7 +159,7 @@ export default function Navbar() {
                 mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
               }`}
               style={{ transitionDelay: `${mobileMenuOpen ? i * 75 + 100 : 0}ms` }}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.name}
             </Link>
