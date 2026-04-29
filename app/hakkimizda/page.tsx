@@ -19,10 +19,10 @@ export default function AboutPage() {
       // 1. Initial Hero Reveal Animation (Clip-Path Expansion)
       gsap.fromTo(heroRevealRef.current,
         { clipPath: "circle(0% at 50% 50%)", scale: 1.1 },
-        { 
-          clipPath: "circle(150% at 50% 50%)", 
+        {
+          clipPath: "circle(150% at 50% 50%)",
           scale: 1,
-          duration: 2.2, 
+          duration: 2.2,
           ease: "power3.inOut",
           delay: 0.2
         }
@@ -36,9 +36,9 @@ export default function AboutPage() {
 
       // 2. Story Reveal Triggers
       gsap.utils.toArray<HTMLElement>(".reveal-text").forEach(el => {
-        gsap.fromTo(el, 
+        gsap.fromTo(el,
           { y: 60, opacity: 0 },
-          { 
+          {
             y: 0, opacity: 1, duration: 1, ease: "power3.out",
             scrollTrigger: {
               trigger: el,
@@ -66,28 +66,28 @@ export default function AboutPage() {
 
   return (
     <div ref={containerRef} className="bg-[#E8D1B5] min-h-screen text-[#2A3B2C] overflow-hidden texture-bg pb-20">
-      
+
       {/* 1. Hero Reveal Section */}
       <section className="relative w-full h-screen bg-[#2A3B2C] flex items-center justify-center pointer-events-none z-10">
         {/* The Reveal Container */}
-        <div 
+        <div
           ref={heroRevealRef}
           className="absolute inset-0 w-full h-full"
           style={{ clipPath: "circle(0% at 50% 50%)" }}
         >
           {/* Background image inside the reveal */}
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center brightness-[0.7]"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=2671&auto=format&fit=crop')" }} 
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=2671&auto=format&fit=crop')" }}
           />
         </div>
-        
+
         {/* Centered Hero Text */}
-        <h1 
+        <h1
           ref={heroTextRef}
           className="relative z-10 text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-[#F9F9F6] font-serif text-center px-4 max-w-6xl leading-[1.1] opacity-0"
         >
-          tamamen doğal, <br/>
+          tamamen doğal, <br />
           <span className="italic text-[#E8D1B5]">gerçek lezzet</span>
         </h1>
       </section>
@@ -95,7 +95,7 @@ export default function AboutPage() {
       {/* 2. Brand Story / Founder Section */}
       <section className="py-20 md:py-48 container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
-          
+
           <div className="w-full md:w-1/2 order-2 md:order-1 reveal-text flex flex-col gap-6 md:gap-8">
             <h2 className="text-5xl sm:text-6xl md:text-8xl font-serif tracking-tighter mb-2 text-[#2A3B2C]">
               neva'nın hikayesi
@@ -118,14 +118,15 @@ export default function AboutPage() {
 
           <div className="w-full md:w-1/2 px-0 md:px-8 order-1 md:order-2 flex justify-center">
             {/* Custom Mask Image */}
-            <div className="w-[85vw] h-[55vh] md:w-[450px] md:h-[600px] overflow-hidden rounded-[4rem] md:rounded-[12rem] opacity-0 reveal-text relative shadow-2xl z-0">
+            <div className="w-[85vw] h-[55vh] md:w-[600px] md:h-[600px] overflow-hidden rounded-[4rem] md:rounded-[8rem] opacity-0 reveal-text relative shadow-2xl z-0">
               <div className="parallax-img absolute w-full h-[120%] top-[-10%] left-0">
-                <Image 
-                  src="/hikayemiz.jpg" 
-                  alt="Restaurant Exterior" 
+                <Image
+                  src="/hikayemiz.jpg"
+                  alt="Restaurant Exterior"
                   fill
-                  sizes="(max-width: 768px) 85vw, 450px"
-                  className="object-cover"
+                  sizes="(max-width: 768px) 85vw, 600px"
+                  className="object-cover object-[65%_50%]"
+
                 />
               </div>
             </div>
@@ -148,14 +149,14 @@ export default function AboutPage() {
       {/* 5. Second Content Block */}
       <section className="py-20 md:py-48 container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
-          
+
           <div className="w-full md:w-1/2 flex justify-center">
             {/* Custom Mask Image - Circle */}
             <div className="w-[85vw] h-[85vw] max-w-[400px] max-h-[400px] md:w-[500px] md:h-[500px] overflow-hidden rounded-full opacity-0 reveal-text relative shadow-2xl z-0">
               <div className="parallax-img absolute w-full h-[120%] top-[-10%] left-0">
-                <Image 
-                  src="/kaynagindan_sofraya.jpg" 
-                  alt="Chef preparing food" 
+                <Image
+                  src="/kaynagindan_sofraya.jpg"
+                  alt="Chef preparing food"
                   fill
                   sizes="(max-width: 768px) 85vw, 500px"
                   className="object-cover"
